@@ -5,6 +5,9 @@
 #include "monteCarloSimulation.h"
 #include <algorithm>
 #include <cmath>
+#include <ctime>
+#include <random>
+#include <chrono>
 
 double monteCarloSimulation(int n, std::vector<int>& index) {
     // Initialize all sites to be blocked
@@ -20,15 +23,13 @@ double monteCarloSimulation(int n, std::vector<int>& index) {
         perc.open(row, col);
         ++counter;
     }
-
     // perc.printGridSnapshot();
 
     return counter / std::pow(n_double, 2);
 }
 
-std::vector<double> runExperiment(int n, int num_iters) {
+void runExperiment(int n, int num_iters, std::vector<double>& prob) {
     std::vector<int> index;
-    std::vector<double> prob;
 
     for(int i = 0; i < n * n; ++i)
         index.push_back(i + 1);
@@ -36,5 +37,4 @@ std::vector<double> runExperiment(int n, int num_iters) {
     for(int i = 0; i < num_iters; ++i) {
         prob.push_back(monteCarloSimulation(n, index));
     }
-    return prob;
 }

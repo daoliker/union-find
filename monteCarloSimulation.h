@@ -8,6 +8,6 @@
 #include "Percolation.h"
 
 double monteCarloSimulation(int n, std::vector<int>& index);
-std::vector<double> runExperiment(int n, int num_iters);
+void runExperiment(int n, int num_iters, std::vector<double>& prob);
 
 #endif // MONTE_CARLO_SIMULATION_H_

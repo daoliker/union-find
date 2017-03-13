@@ -6,7 +6,7 @@
 #include <cmath>
 
 void PercolationStats::run() {
-    prob = runExperiment(n, trials);
+    runExperiment(n, trials, prob);
 }
 
 double PercolationStats::mean() {

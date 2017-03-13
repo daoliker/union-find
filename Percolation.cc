@@ -56,6 +56,7 @@ void Percolation::open(int row, int col) {
         else
             wuf.union_op((row - 1) * max_indice + col, row * max_indice + col);
     }
+
     num_open_site++;
 }
 

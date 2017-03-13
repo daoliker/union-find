@@ -9,7 +9,7 @@
 
 class PercolationStats {
 
-friend std::vector<double> runExperiment(int n, int num_iters);
+friend void runExperiment(int n, int num_iters, std::vector<double>& prob);
 
 public:
     // perform trials independent experiments on an n-by-n grid
@@ -38,6 +38,7 @@ private:
     double stddev_val;
 };
 
-std::vector<double> runExperiment(int n, int num_iters);
+// friend function declaration
+void runExperiment(int n, int num_iters, std::vector<double>& prob);
 
 #endif // PERCOLATION_STATS_H_
